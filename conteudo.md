@@ -35,13 +35,14 @@ print(img.dtype)
 # ROI (Region of Intesrest)
 
 A partir da indexação é possível fazer operações como:
-![Texto alternativo](imagens\messi5.jpg)
+
+![Legenda](https://github.com/davi-dressler/fgv_vc/blob/main/imagens/messi5.jpg)
 
 ```python
 ball = img[280:340, 330:390]
 img[273:333, 100:160] = ball
 ```
 
-![Texto alternativo](imagens\messi_bola_duplicada.png)
+![Legenda](url da img)
 
 
