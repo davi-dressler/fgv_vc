@@ -35,7 +35,7 @@ print(img.dtype)
 # ROI (Region of Intesrest)
 
 A partir da indexação é possível fazer operações como:
-![Texto alternativo](imagens\messi5.png)
+![Texto alternativo](imagens\messi5.jpg)
 
 ```python
 ball = img[280:340, 330:390]
