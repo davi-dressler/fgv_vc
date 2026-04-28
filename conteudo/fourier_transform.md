@@ -83,5 +83,46 @@ A função $\hat{f}$ é denotada como a $\textbf{Transformada de Fourier}$ de $f
 $$\hat{f}(w) = \int_{t \in \mathbb{R}}f(t)\exp(-2\pi iwt)dt$$
 $$= \int_{t \in \mathbb{R}}f(t)\cos(-2\pi iwt)dt + i \int_{t \in \mathbb{R}}f(t)\sin(-2\pi iwt)dt$$
 
+Em outras palavras, a parte real do coeficiente complexo $\hat{f}(w)$ é obtido ao coparar o sinal original $f$ com uma função cosseno de frequência $w$, e a parte imaginária é obtida ao comparar com uma função seno de frequêcia $w$. O valor absoluto $|\hat{f}(w)|$ é também chamado de $\textbf{magnitude}$ do coeficiente de Fourier. Da mesma forma, a função de valor real $|\hat{f}|$ que resulta para cada $w$ uma magnitude $|\hat{f}(w)|$ é chamada de transformada de Fourier de magnitude de $f$.
+
+A partir da fórmula para $c_w$, nós obtemos:
+
+$$d_w = \sqrt{2} |\hat{f}(w)|$$
+$$\varphi_w = - \frac{\gamma_w}{2\pi}$$
+
+Onde $|\hat{f}(w)|$ e $\gamma_w$ são as coordenadas polares de $\hat{f}(w)$.
+
+## Representação de Fourier
+
+Como dito anteriormente, o sinal original $f$ pode ser reconstruido a partir da sua transformada de Fourier. A princípi, a reconstrução é direta: sobrepoe-se as senoides de todas as frequências possíves $w$, cada uma multiplicada pelos seu respectivo $d_w$ e deslocada por $\varphi_w$. Ambos os tipos de informação estão codificados no coeficiente complexo de Fourier $c_\omega$. No caso analógico considerado até agora, estamos lidando com uma sequência contínua de parâmetros de frequência, onde a superposição se torna uma integração sobre o espaço de parâmetros. A reconstrução é dada pelas fórmulas:
+
+$$f(t) = \int_{w \in \mathbb{R}}d_w \sqrt{2} \cos(2\pi(wt - \varphi_w))dw$$
+$$= \int_{w \in \mathbb{R}}c_w\exp(2\pi iwt)dw$$
+
+## Transformada Discreta de Fourier
+
+A fim de armazenar e processar apenas um número finito de parâmetros, sinais analógicos precisam ser convertidos em representações finitas, um processo que é comumente chamado de digitlização. Um passo que é aplicado em uma conversão analógica para digital é conhecido como amostragem equidistante. Dado um sinal $f$ e um número positivo $T$ (período), define-se uma função $x: \mathbb{Z} \rightarrow \mathbb{R}$ como:
+
+$$x(n) = f(nT)$$
+
+Como $x$ é definido apenas em um conjunto discreto de pontos no tempo, ele também é chamado de sinal de tempo discreto (DT). O valor $x(n)$ é chamado de uma amostra retirada no tempo $t = nT$ do sinal analógico original $f$. Esse procedimento também é conhecido como amostragem-$T$, onde o número $T$ é o período de amostragem. Sua inversa:
+
+$$F_s = 1 / T$$
+
+é chamada de taxa de amostragem (sampling rate) do processo. Ela especifica o número de amostras por segundo e é mensurada em Hertz(Hz). 
+
+### Teorema da amostragem
+
+O famoso teorema da amostragem nos afirma que o sinal original $f$ pode ser reconstruído perfeitamente a partir da versão $x$ se $f$ não contiver nenhuma frequência maior do que:
+
+$$\Omega = F_s/2 = 1/(2T) $$
+
+Nesse caso, nós também dizemos que $f$ é um sinal de  $\Omega$-bandalimitado. No caso em que $f$ contém frequências mais altas issopode causar artefatos que nós chamamos de aliasing.
+
+
+
+
+
+
 
 
